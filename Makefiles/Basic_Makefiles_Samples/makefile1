@@ -1,0 +1,11 @@
+all: myProg1 myProg2
+myProg1: myClass1.h myProgram1.o
+	g++ -std=c++11 myClass1.h myProgram1.o -o myProg1
+myProg2: myClass2.h myProgram2.o
+	g++ -std=c++11 myClass2.h myProgram2.o -o myProg2
+myProgram1.o: myProgram1.cpp
+	g++ -std=c++11 myProgram1.cpp -c
+myProgram2.o: myProgram2.cpp
+	g++ -std=c++11 myProgram2.cpp -c
+clean:
+	rm -rf *.o dist

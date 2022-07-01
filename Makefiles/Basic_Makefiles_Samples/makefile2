@@ -1,0 +1,8 @@
+default: myprog 
+
+myprog: class.h mainProgram.o
+	g++ class.h mainProgram.o -std=c++11 -o myprog
+mainProgram.o: mainProgram.cpp
+	g++ -std=c++11 mainProgram.cpp  -c 
+clean: 
+	rm -rf *.o myprog

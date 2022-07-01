@@ -1,0 +1,11 @@
+default: myProg
+myProg: myClass1.o myClass2.o myProgram.o
+	g++ -std=c++11 myClass1.o myClass2.o myProgram.o -o myProg
+myClass1.o: myClass1.cpp myClass1.h
+	g++ -std=c++11 myClass1.cpp -c
+myClass2.o: myClass2.cpp myClass2.h
+	g++ -std=c++11 myClass2.cpp -c
+myProgram.o: myProgram.cpp
+	g++ -std=c++11 myProgram.cpp -c
+clean:
+	rm -rf *.o dist
